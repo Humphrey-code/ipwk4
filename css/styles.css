@@ -17,4 +17,13 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: white;
+}
+
+.input{
+  width: 100%;
+}
+
+#button{
+width: 100%;
 }
