@@ -1,0 +1,16 @@
+/* .container{
+  height: 500px;
+  background-image: url("../img/foodphoto1.jpg") image();
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} */
+
+.masthead{
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('../img/foodphoto2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
