@@ -103,18 +103,19 @@ switch (delivery) {
     console.log("No price");
 };
 
-  alert(pizzaPrice)
-  alert(crustPrice)
-  alert(toppingPrice)
-  alert(deliveryPrice)
-
 var subTotalPrice = pizzaPrice + crustPrice + toppingPrice
 var totalPrice = subTotalPrice + deliveryPrice
 
-  alert(subTotalPrice)
-  alert(totalPrice)
+
+  $("#pizSize").html($("#pizzaSizeSelected").find('option:selected').text());
+  $("#pizCrust").html($("#pizzaCrustSelected").find('option:selected').text());
+  $("#pizTop").html($("#toppingSelected").find('option:selected').text());
+  $("#subTPrice").html(subTotalPrice);
+
 });
 });
+
+
 
 // pizzaSize > "0") && (crust > "0") && (delivery > "0")){
 // console.log ("Please fill in all required fields!")
