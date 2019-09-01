@@ -10,6 +10,24 @@
 // }
 
 // proceed to checkout button
+
+// Order Online Button
+
+$(document).ready(function(event){
+  $("#orderNow").click(function(){
+    $("#orderForm").show();
+  });
+});
+
+// add to cart button
+
+$(document).ready(function(event){
+  $("#addToCart").click(function(){
+    $("#orderForm").hide();
+    $("#itemsCart").show();
+  });
+});
+
 $(document).ready(function(event){
   $("#addToCart").click(function(){
     var pizzaSize = $("#pizzaSizeSelected").val();
@@ -24,8 +42,7 @@ $(document).ready(function(event){
 // alert(crust);
 // alert(pizzaSize);
 
-// let subTotalPrice = pizzaPrice + crustPrice + toppingPrice
-// let totalPrice = subTotalPrice + deliveryPrice
+
 var pizzaPrice = "";
 switch(pizzaSize){
   case "1":
@@ -90,6 +107,12 @@ switch (delivery) {
   alert(crustPrice)
   alert(toppingPrice)
   alert(deliveryPrice)
+
+var subTotalPrice = pizzaPrice + crustPrice + toppingPrice
+var totalPrice = subTotalPrice + deliveryPrice
+
+  alert(subTotalPrice)
+  alert(totalPrice)
 });
 });
 
