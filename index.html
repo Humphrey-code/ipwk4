@@ -41,17 +41,35 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="card" id=itemsCart>
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </blockquote>
-  </div>
-</div>
+          <div class="card-header">Your Meal</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Size</th>
+          <th>Crust</th>
+          <th>Toppings</th>
+          <th>Sub-Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pizza</td>
+          <td id="pizSize"></td>
+          <td id="pizCrust"></td>
+          <td id="pizTop"></td>
+          <td id="subTPrice"></td>
+        </tr>
+      </tbody>
+    </table>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            <button type="button" class="btn btn-outline-info" id="addItem">Add Item</button>
+            <a href="#" class="btn btn-primary" id= checkOut>Proceed to checkout</a>
+            </blockquote>
+          </div>
+          </div>
         <div class="col-9 text-center">
           <h1 class="font-weight-light">Relax to some expertly crafted Pizzas'</h1>
           <p class="lead">Enjoy amazing cuisines and tastes</p>
@@ -67,16 +85,16 @@
             </select>
             <select class="browser-default custom-select mb-4" id="pizzaCrustSelected">
               <option value="0" selected disabled>Choose your spice preference</option>
-              <option value="1">Crispy</option>
-              <option value="2">Stuffed</option>
-              <option value="3">Gluteen-free</option>
+              <option value="1" class= "Crispy">Crispy</option>
+              <option value="2" Class "Stuffed">Stuffed</option>
+              <option value="3" Class="Gluteen-Free">Gluteen-free</option>
             </select>
             <select class="browser-default custom-select mb-4" id="toppingSelected">
               <option value="0" selected disabled>Choose a meal compliment</option>
-              <option value="1">None of this</option>
-              <option value="2">Option 1</option>
-              <option value="3">Option 2</option>
-              <option value="4">Option 3</option>
+              <option value="1" class ="None">None of this</option>
+              <option value="2"class="Cocktail">Cocktail-300ml</option>
+              <option value="3" class="Soda">Soda-500ml</option>
+              <option value="4"class="Water">Water-500ml</option>
             </select>
             <select class="browser-default custom-select mb-4" id="deliveryOptionSelected">
               <option value="0" selected disabled>Choose your delivery option</option>
