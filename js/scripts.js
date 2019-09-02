@@ -6,7 +6,7 @@ function Order(pizzaSize, crust, toppings, subTotalPrice){
   this.size = pizzaSize;
   this.crust = crust;
   this.toppings = toppings;
-  this.subTotalPrice = subTotalPrice;
+  this.subTotalPrice =subTotalPrice;
 }
 
 // proceed to checkout button
@@ -42,9 +42,9 @@ $(document).ready(function(event){
 // alerting delivery option
 if(delivery == "2"){
   var location = prompt("Where would you want your delivery done?")
+
 alert("Confirmed, Your order shall be delivered at" + " " +location)
 };
-
 
 var pizzaPrice = "";
 switch(pizzaSize){
@@ -104,10 +104,10 @@ switch (delivery) {
     break;
   default:
     console.log("No price");
+
 };
 
-var subTotalPrice = pizzaPrice + crustPrice + toppingPrice
-
+var subTotalPrice = parseInt(pizzaPrice) + parseInt(crustPrice) + parseInt(toppingPrice)
 
   $("#pizSize").html($("#pizzaSizeSelected").find('option:selected').text());
   $("#pizCrust").html($("#pizzaCrustSelected").find('option:selected').text());
@@ -115,7 +115,7 @@ var subTotalPrice = pizzaPrice + crustPrice + toppingPrice
   $("#subTPrice").html(subTotalPrice);
 
 // Add Item Button
-$(document).ready(function(){
+$(document).ready(function(event){
   $("#addItem").click(function(){
     var pizzaSize = $("#pizzaSizeSelected").val();
     var crust = $("#pizzaCrustSelected").val();
@@ -188,16 +188,10 @@ var pname, cname, tname, subTotalPriceA
     console.log("No price");
     };
 
-      var newOrder= new Order(pname,cname,tname,subTotalPriceA);
+      var newOrder= new Order(pname,cname,tname,subTotalPrice);
 
-      alert(newOrder.size)
 
-      alert(pizzaPrice);
-      alert(crustPrice);
-      alert(toppingPrice);
-      alert(newOrder.subTotalPrice);
-
-    $("#listOfItems").append('<tr><td id="pizSize">'+ newOrder.size + '</td><td id ="pizCrust">' + newOrder.crust + '</td><td id="pizTop">' + newOrder.toppings + '</td><td id ="subTPrice">' + newOrder.subTotalPrice +'</td></tr>');
+    $("#listOfItems").append('<tr><td id ="Pizza">' + "Pizza" + '<td id="pizSize">'+ newOrder.size + '</td><td id ="pizCrust">' + newOrder.crust + '</td><td id="pizTop">' + newOrder.toppings + '</td><td id ="subTPrice">' + newOrder.subTotalPrice +'</td></tr>');
 
 
   });
@@ -206,12 +200,17 @@ var pname, cname, tname, subTotalPriceA
 });
 });
 
-
- // Proceed to Checkout Button
- $(document).ready(function(){
-   $("#checkOut").click(function(){
-    var client = prompt("Your name Please?")
-    var Contact = prompt("For easier communcation, provide us with your contact as well")
-alert("Thank you" + " " +client+"," + " "+ "Enjoy the Meal, delivery shall be done in 20 minutes, Be sure to give us feedback")
-  });
+// Proceed to Checkout Button
+$(document).ready(function(){
+  $("#checkOut").click(function(){
+    var deliveryCost = parseInt(150);
+    console.log("Your delivery cost is" +deliveryCost)
+       $("#deliveryCost").append("Your delivery cost is" + " KES "+deliveryCost)
+    var totalCost = subTotalPrice + deliveryCost
+      console.log("Total Amount Payable =" +totalCost)
+        $("#totalCost").append("Total Amount Payable=" +totalCost)
+   var client = prompt("Your name Please?")
+   var Contact = prompt("For easier communcation, provide us with your contact as well")
+alert("Thank you" + " " +client+"," + " "+ "Enjoy the Meal, Prepare the Total amount billed, Delivery shall be done within 20 minutes. Be sure to give us feedback")
+ });
 });

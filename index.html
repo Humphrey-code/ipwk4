@@ -65,8 +65,8 @@
                     </tr>
                   </tbody>
                 </table>
-                <p>Your Delivery Cost = </p>
-                <p>Your Total Cost = </p>
+                <p id=deliveryCost></p>
+                <p id=totalCost></p>
               <footer class="blockquote-footer"><cite title="Source Title"></cite></footer>
               <button type="button" class="btn btn-outline-info" id="addItem">Add Item</button>
               <a href="#" class="btn btn-primary" id= checkOut>Proceed to checkout</a>
@@ -103,7 +103,7 @@
               <option value="1">Collection</option>
               <option value="2">Delivery</option>
             </select>
-            <button type="button" class="btn btn-outline-info" id="addToCart">Add to cart</button>
+            <button type="button" class="btn btn-outline-info" id="addToCart" reset()>Add to cart</button>
         </div>
       </div>
     </div>
