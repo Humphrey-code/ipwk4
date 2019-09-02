@@ -35,7 +35,6 @@ $(document).ready(function(event){
    alert("Please fill in all required fields!");
  }
  else {
-  $("#orderForm").hide();
   $("#itemsCart").show();
  }
 
@@ -118,7 +117,6 @@ var subTotalPrice = pizzaPrice + crustPrice + toppingPrice
 // Add Item Button
 $(document).ready(function(){
   $("#addItem").click(function(){
-    $("#orderForm").show();
     var pizzaSize = $("#pizzaSizeSelected").val();
     var crust = $("#pizzaCrustSelected").val();
     var toppings = $("#toppingSelected").val();
@@ -208,14 +206,6 @@ var pname, cname, tname, subTotalPriceA
 });
 });
 
-// Validating entries
-
-
-
-
-// pizzaSize > "0") && (crust > "0") && (delivery > "0")){
-// console.log ("Please fill in all required fields!")
-// }
 
  // Proceed to Checkout Button
  $(document).ready(function(){
