@@ -213,9 +213,10 @@ var pname, cname, tname, subTotalPriceA
 // }
 
  // Proceed to Checkout Button
-
  $(document).ready(function(){
    $("#checkOut").click(function(){
-
-   })
- })
+    var client = prompt("Your name Please?")
+    var Contact = prompt("For easier communcation, provide us with your contact as well")
+alert("Thank you" + " " +client+"," + " "+ "Enjoy the Meal, delivery shall be done in 20 minutes, Be sure to give us feedback")
+  });
+});
