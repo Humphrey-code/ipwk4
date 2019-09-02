@@ -21,12 +21,6 @@ $(document).ready(function(event){
 
 // add to cart button
 
-$(document).ready(function(event){
-  $("#addToCart").click(function(){
-    $("#orderForm").hide();
-    $("#itemsCart").show();
-  });
-});
 
 $(document).ready(function(event){
   $("#addToCart").click(function(){
@@ -35,12 +29,23 @@ $(document).ready(function(event){
     var toppings = $("#toppingSelected").val();
     var delivery = $("#deliveryOptionSelected").val();
 
+ // validating entries
+
+ if((pizzaSize == "0") || (crust == "0") || (toppings == "0") || delivery == "0"){
+   alert("Please fill in all required fields!");
+ }
+ else {
+  $("#orderForm").hide();
+  $("#itemsCart").show();
+ }
+
+
 // alerting delivery option
 if(delivery == "2"){
   var location = prompt("Where would you want your delivery done?")
+alert("Confirmed, Your order shall be delivered at" + " " +location)
 };
 
-  alert("Confirmed, Your order shall be delivered at" + " " +location)
 
 var pizzaPrice = "";
 switch(pizzaSize){
