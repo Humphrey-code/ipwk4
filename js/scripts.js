@@ -138,6 +138,7 @@ event.preventDefault();
 // Add Item Button
 $(document).ready(function(event){
   $("#addItem").click(function(){
+    $("#addToCart").hide();
 
     var pizzaSize = $("#pizzaSizeSelected").val();
     var crust = $("#pizzaCrustSelected").val();
@@ -214,10 +215,7 @@ var pname, cname, tname, subTotalPriceA
     console.log("No price");
     };
 
-
-
       var newOrder= new Order(pname,cname,tname,subTotalPrice);
-
 
     $("#listOfItems").append('<tr><td id ="Pizza">' + "Pizza" + '<td id="pizSize">'+ newOrder.size + '</td><td id ="pizCrust">' + newOrder.crust + '</td><td id="pizTop">' + newOrder.toppings + '</td><td id ="subTPrice">' + newOrder.subTotalPrice +'</td></tr>');
 
