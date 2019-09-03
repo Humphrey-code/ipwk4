@@ -35,7 +35,6 @@ $(document).ready(function(event){
   $("#itemsCart").show();
 };
 
-
 // alerting delivery option
 var deliveryCost=""
 if(delivery == "2"){
@@ -106,7 +105,6 @@ switch (delivery) {
     console.log("No price");
 
 };
-
 var subTotalPrice = parseInt(pizzaPrice) + parseInt(crustPrice) + parseInt(toppingPrice)
 console.log(subTotalPrice)
 let checkOutTotal =0;
@@ -117,6 +115,10 @@ checkOutTotal = checkOutTotal + subTotalPrice +deliveryCost;
   $("#pizTop").html($("#toppingSelected").find('option:selected').text());
   $("#subTPrice").html(subTotalPrice);
 
+  $('#pizzaSizeSelected').prop('selectedIndex',0);
+   $('#pizzaCrustSelected').prop('selectedIndex',0);
+    $('#toppingSelected').prop('selectedIndex',0);
+     $('#deliveryOptionSelected').prop('selectedIndex',0);
   // Proceed to Checkout Button
   $(document).ready(function(){
     $("#checkOut").click(function(){
@@ -127,17 +129,25 @@ checkOutTotal = checkOutTotal + subTotalPrice +deliveryCost;
      var client = prompt("Your name Please?");
      var Contact = prompt("For easier communcation, provide us with your contact as well");
   alert("Thank you" + " " +client+"," + " "+ "Enjoy the Meal, Prepare the Total amount billed, Delivery shall be done within 20 minutes. Be sure to give us feedback")
+event.preventDefault();
    });
   });
+
+
 
 // Add Item Button
 $(document).ready(function(event){
   $("#addItem").click(function(){
+
     var pizzaSize = $("#pizzaSizeSelected").val();
     var crust = $("#pizzaCrustSelected").val();
     var toppings = $("#toppingSelected").val();
     var delivery = $("#deliveryOptionSelected").val();
 
+    if((pizzaSize == "0") || (crust == "0") || (toppings == "0") || delivery == "0"){
+      alert("Please fill in all required fields!");
+      return;
+    }
 var pname, cname, tname, subTotalPriceA
     var pname = ($("#pizzaSizeSelected").find('option:selected').text());
     var cname = ($("#pizzaCrustSelected").find('option:selected').text());
@@ -203,6 +213,7 @@ var pname, cname, tname, subTotalPriceA
     default:
     console.log("No price");
     };
+
 
 
       var newOrder= new Order(pname,cname,tname,subTotalPrice);
